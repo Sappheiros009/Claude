@@ -1,0 +1,12 @@
+# Phase 1 (메시) 의존성
+# bpy 휠은 특정 Python 버전에만 배포된다. bpy 5.3 → Python 3.13 (bpy 5.0 → Python 3.11).
+# 가상환경을 그 버전으로 만든 뒤 설치한다:  uv venv -p 3.13 && uv pip install -r requirements-phase1.txt
+bpy>=5.0
+build123d>=0.9
+numpy
+scipy
+pillow
+pytest
+
+# 깊이 추정(estimate 명령)에만 필요. CPU 빌드 torch를 쓴다.
+# uv pip install torch --index-url https://download.pytorch.org/whl/cpu && uv pip install transformers
